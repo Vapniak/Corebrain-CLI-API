@@ -1,0 +1,6 @@
+@CorebrainCLIAPI_HostAddress = http://localhost:5140
+
+GET {{CorebrainCLIAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

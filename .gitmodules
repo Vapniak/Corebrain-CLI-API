@@ -1,0 +1,3 @@
+[submodule "src/Corebrain-CS"]
+	path = src/Corebrain-CS
+	url = https://github.com/Vapniak/Corebrain-CS.git
