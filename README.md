@@ -12,6 +12,7 @@
 ### Installation
 
 1. Create **venv** in corebrain directory
-2. Install the corebrain dev
-3. Go to src/CorebrainCLIAPI
-4. run `dotnet run`
+2. Continue with installation provided here https://github.com/ceoweggo/Corebrain/blob/pre-release-v0.2.0/README.md#development-installation
+3. If you changed the installation directory of venv or corebrain, change the paths in `CorebrainCLIAPI/appsettings.json`  
+4. Go to `src/CorebrainCLIAPI`
+5. run `dotnet run`
