@@ -4,19 +4,19 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1️⃣ Dodaj usługę CORS dla frontendu (np. Vite na 5173)
+// CORS policy to allow requests from the frontend
 builder.Services.AddCors(options => options.AddPolicy("AllowFrontend", policy =>
     policy.WithOrigins("http://localhost:5173")
           .AllowAnyMethod()
           .AllowAnyHeader()
 ));
 
-// 2️⃣ Rejestracja kontrolerów i ustawień
+// Configure controllers and settings
 builder.Services.AddControllers();
 builder.Services.Configure<CorebrainSettings>(
     builder.Configuration.GetSection("CorebrainSettings"));
 
-// 3️⃣ Swagger / OpenAPI
+// Swagger / OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c => {
   c.SwaggerDoc("v1", new OpenApiInfo {
@@ -34,7 +34,7 @@ builder.Services.AddSwaggerGen(c => {
 
 var app = builder.Build();
 
-// 4️⃣ Middleware pipeline
+// Middleware pipeline
 app.UseCors("AllowFrontend");
 
 if (app.Environment.IsDevelopment()) {
